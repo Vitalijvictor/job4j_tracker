@@ -5,4 +5,7 @@ public class DummyDic {
         String word = "Неизвестное слово.";
         return word;
     }
+
+    public static void main(String[] args) {
+    }
 }
