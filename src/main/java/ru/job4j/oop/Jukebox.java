@@ -1,9 +1,4 @@
 package ru.job4j.oop;
-/*
-@ if
-@ else if
-@ else
-*/
 
 public class Jukebox {
     public void music(int position){
