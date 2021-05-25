@@ -11,8 +11,8 @@ public class Triangle {
         this.third = cp;
     }
 
-    public double period(double a, double b, double c) {
-        return -1;
+    public double period(double ab, double ac, double bc) {
+        return (ab + ac + bc) / 2;
     }
 
 
@@ -26,6 +26,7 @@ public class Triangle {
         double ac = first.distance(third);
         double bc = second.distance(third);
         double p = period(ab, ac, bc);
+
         if (this.exist(ab, ac, bc)) {
 
                 p = (ab + ac + bc) / 2;
