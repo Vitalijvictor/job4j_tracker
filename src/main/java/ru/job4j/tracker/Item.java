@@ -9,6 +9,18 @@ public class Item {
     private String job;
     private LocalDateTime created = LocalDateTime.now();
 
+    public Item(String name) {
+        this.name = name;
+    }
+
+    public Item(int id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
+    public Item() {
+    }
+
     public LocalDateTime getCreated() {
         return created;
     }
@@ -26,18 +38,6 @@ public class Item {
     }
 
     public void setName(String name) {
-        this.name = name;
-    }
-
-    public Item() {
-    }
-
-    public Item(String name) {
-        this.name = name;
-    }
-
-    public Item(int id, String name) {
-        this.id = id;
         this.name = name;
     }
 }
