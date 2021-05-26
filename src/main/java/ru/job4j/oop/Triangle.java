@@ -27,7 +27,6 @@ public class Triangle {
         double p = period(ab, ac, bc);
 
         if (this.exist(ab, ac, bc)) {
-
                 p = (ab + ac + bc) / 2;
                 rsl = Math.sqrt(p * (p - ab) * (p - ac) * (p - bc));
                 return rsl;
