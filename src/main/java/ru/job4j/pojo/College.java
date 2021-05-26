@@ -5,10 +5,10 @@ import java.util.Date;
 public class College {
     public static void main(String[] args) {
         Student student = new Student();
-        student setFull_name("John Stivens");
-        student setFaculty("informatica");
-        student setReceipt_date(new Date());
+        student.setFullName("John Stivens");
+        student.setFaculty("computer science");
+        student.setReceiptDate(new Date());
 
-        System.out.println(student.getFull_name() + " Are student - " + student.getFaculty() + " faculty ");
+        System.out.println(student.getFullName() + " is student of " + student.getFaculty() + " faculty ");
     }
 }

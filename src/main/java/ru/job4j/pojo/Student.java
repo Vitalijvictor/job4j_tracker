@@ -3,16 +3,16 @@ package ru.job4j.pojo;
 import java.util.Date;
 
 public class Student {
-    private String full_name;
+    private String fullName;
     private String faculty;
-    private Date receipt_date;
+    private Date receiptDate;
 
-    public String getFull_name() {
-        return full_name;
+    public String getFullName() {
+        return fullName;
     }
 
-    public void setFull_name(String full_name) {
-        this.full_name = full_name;
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
     }
 
     public String getFaculty() {
@@ -23,11 +23,11 @@ public class Student {
         this.faculty = faculty;
     }
 
-    public int getReceipt_date() {
-        return receipt_date;
+    public Date getReceiptDate() {
+        return receiptDate;
     }
 
-    public void setReceipt_date(int receipt_date) {
-        this.receipt_date = receipt_date;
+    public void setReceiptDate(Date receiptDate) {
+        this.receiptDate = receiptDate;
     }
 }
