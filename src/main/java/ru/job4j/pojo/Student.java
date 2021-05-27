@@ -5,7 +5,7 @@ import java.util.Date;
 public class Student {
     private String fullName;
     private String faculty;
-    private Date receiptDate;
+    private Date created;
 
     public String getFullName() {
         return fullName;
@@ -23,11 +23,11 @@ public class Student {
         this.faculty = faculty;
     }
 
-    public Date getReceiptDate() {
-        return receiptDate;
+    public Date getCreated() {
+        return created;
     }
 
-    public void setReceiptDate(Date receiptDate) {
-        this.receiptDate = receiptDate;
+    public void setCreated(Date created) {
+        this.created = created;
     }
 }

@@ -7,8 +7,8 @@ public class College {
         Student student = new Student();
         student.setFullName("John Stivens");
         student.setFaculty("computer science");
-        student.setReceiptDate(new Date());
+        student.setCreated(new Date());
 
-        System.out.println(student.getFullName() + " is student of " + student.getFaculty() + " faculty ");
+        System.out.println(student.getFullName() + " is student of " + student.getFaculty() + " faculty " + student.getCreated());
     }
 }
