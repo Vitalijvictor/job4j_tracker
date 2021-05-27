@@ -12,23 +12,30 @@ public class Library {
         Book misery = new Book("Misery", 294);
         Book richDad = new Book("Rich DAd", 345);
         Book firetales = new Book("Storybook", 165);
-        Book island = new Book("Island", 421);
-        Book[] cleanCode = new Book[4];
-        cleanCode[0] = misery;
-        cleanCode[1] = richDad;
-        cleanCode[2] = firetales;
-        cleanCode[3] = island;
-        for (int index = 0; index < cleanCode.length; index++) {
-            Book bk = cleanCode[index];
-            System.out.println(bk.getName() + " - " + bk.getNumberOfPages());
+        Book cleanCode = new Book("Clean code", 421);
+        Book[] bk =  new Book[4];
+
+        bk[0] = misery;
+        bk[1] = richDad;
+        bk[2] = firetales;
+        bk[3] = cleanCode;
+
+        for (int index = 0; index < bk.length; index++) {
+            Book b = bk[index];
+            System.out.println(b.getName() + " - " + b.getNumberOfPages());
         }
 
-        for (int index = 0; index < cleanCode.length; index++) {
-            Book temp = cleanCode[0];
-            cleanCode[0] = cleanCode[3];
-            cleanCode[3] = temp;
-            Book b = cleanCode[index];
-            System.out.println(b.getName() + " - " + b.getNumberOfPages());
+        Book temp = bk[0];
+        bk[0] = bk[3];
+        bk[3] = temp;
+
+        for (int index = 0; index < bk.length; index++) {
+            if (bk[index].getName() == "Clean code") {
+                System.out.println(bk[index].getName() + " - " + bk[index].getNumberOfPages());
+            }
+            /*if (bk[index] == cleanCode) {
+                System.out.println(bk[index].getName() + " - " + bk[index].getNumberOfPages());
+            }*/
         }
     }
 }
