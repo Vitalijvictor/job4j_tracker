@@ -13,6 +13,8 @@ public class Library {
         Book richDad = new Book("Rich DAd", 345);
         Book firetales = new Book("Storybook", 165);
         Book cleanCode = new Book("Clean code", 421);
+
+
         Book[] bk =  new Book[4];
 
         bk[0] = misery;
@@ -20,8 +22,7 @@ public class Library {
         bk[2] = firetales;
         bk[3] = cleanCode;
 
-        for (int index = 0; index < bk.length; index++) {
-            Book b = bk[index];
+        for (Book b : bk) {
             System.out.println(b.getName() + " - " + b.getNumberOfPages());
         }
 
@@ -29,13 +30,10 @@ public class Library {
         bk[0] = bk[3];
         bk[3] = temp;
 
-        for (int index = 0; index < bk.length; index++) {
-            if (bk[index].getName() == "Clean code") {
-                System.out.println(bk[index].getName() + " - " + bk[index].getNumberOfPages());
+        for (Book b : bk) {
+            if (b == cleanCode) {
+                System.out.println(b.getName() + " - " + b.getNumberOfPages());
             }
-            /*if (bk[index] == cleanCode) {
-                System.out.println(bk[index].getName() + " - " + bk[index].getNumberOfPages());
-            }*/
         }
     }
 }
