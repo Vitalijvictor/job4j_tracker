@@ -31,7 +31,7 @@ public class Library {
         bk[3] = temp;
 
         for (Book b : bk) {
-            if (b == cleanCode) {
+            if (b.equals(cleanCode)) {
                 System.out.println(b.getName() + " - " + b.getNumberOfPages());
             }
         }
