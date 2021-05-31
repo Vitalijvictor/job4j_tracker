@@ -12,6 +12,9 @@ public class MagicBall {
         if (answer == 0) {
             System.out.println("yes");
         }
+        else {
+            System.out.println("Maybe");
+        }
         if (answer == 1) {
             System.out.println("no");
         }
