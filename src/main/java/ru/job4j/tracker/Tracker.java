@@ -20,7 +20,7 @@ public class Tracker {
     public Item[] findByName(String key){
         Item[] rsl = new Item[size];
         int counter = 0;
-        for (int index = 0; index < items.length; index++){
+        for (int index = 0; index < size; index++){
             Item item = items[index];
             if (key.equals(item.getName())){
                 rsl[counter++] = item;
@@ -29,12 +29,23 @@ public class Tracker {
         return Arrays.copyOf(rsl, counter);
     }
 
-    public Item findById(int id) {
+        public Item findById(int id) {
         Item rsl = null;
         for (int index = 0; index < size; index++) {
             Item item = items[index];
             if (item.getId() == id) {
                 rsl = item;
+                break;
+            }
+        }
+        return rsl;
+    }
+
+    private int indexOf(int id) {
+        int rsl = -1;
+        for (int index = 0; index < size; index++) {
+            if (items[index].getId() == id) {
+                rsl = index;
                 break;
             }
         }
