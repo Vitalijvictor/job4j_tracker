@@ -27,9 +27,7 @@ public class Tracker {
         for (int index = 0; index < items.length; index++){
             Item item = items[index];
             if (key.equals(item.getName())){
-                rsl[counter++] = item
-
-                ;
+                rsl[counter++] = item;
             }
         }
         return Arrays.copyOf(rsl, counter);
