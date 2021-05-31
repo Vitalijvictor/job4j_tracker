@@ -17,10 +17,6 @@ public class Tracker {
         return Arrays.copyOf(items, size);
     }
 
-    /*public Item findByName(String key){
-        Item items = Arrays.copyOf(name.getName(key), size);
-    }*/
-
     public Item[] findByName(String key){
         Item[] rsl = new Item[size];
         int counter = 0;
