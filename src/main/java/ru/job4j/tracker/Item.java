@@ -7,7 +7,6 @@ public class Item {
     private int id;
     private String name;
     private String job;
-    private LocalDateTime created = LocalDateTime.now();
 
     public Item(String name) {
         this.name = name;
@@ -21,8 +20,7 @@ public class Item {
     public Item() {
     }
 
-    public LocalDateTime getCreated() {
-        return created;
+    public Item(int i, String root, String root1) {
     }
 
     public int getId() {
@@ -39,5 +37,22 @@ public class Item {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getJob() {
+        return job;
+    }
+
+    public void setJob(String job) {
+        this.job = job;
+    }
+
+    @Override
+    public String toString() {
+        return "Item{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", job='" + job + '\'' +
+                '}';
     }
 }
