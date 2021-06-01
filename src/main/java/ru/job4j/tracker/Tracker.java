@@ -47,14 +47,13 @@ public class Tracker {
         return rsl;
     }
 
-    public boolean replace(int id, Item newItem) {
+    public boolean replace(int id, Item item) {
         int index = indexOf(id);
         if (index == -1) {
             return false;
         }
-
-        newItem.setId(id);
-        items[index] = newItem;
+        item.setId(id);
+        items[index] = item;
         return true;
     }
 
@@ -63,12 +62,10 @@ public class Tracker {
         if (index == -1) {
             return false;
         }
-            int start = index + 1;
-            int distPos = index;
-            int length = size - 1;
-            items[size - 1] = null;
-            size--;
-            System.arraycopy(items, start, items, distPos, length);
-            return true;
+
+        System.arraycopy(items, index + 1, items, index, size - index - 1);
+        items[--size] = null;
+
+        return true;
     }
 }
