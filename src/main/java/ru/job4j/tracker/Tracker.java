@@ -48,6 +48,9 @@ public class Tracker {
     }
 
     public boolean replace(int id, Item item) {
+        if (item == null) {
+            return false;
+        }
         int index = indexOf(id);
         if (index == -1) {
             return false;
@@ -62,10 +65,8 @@ public class Tracker {
         if (index == -1) {
             return false;
         }
-
         System.arraycopy(items, index + 1, items, index, size - index - 1);
-        items[--size] = null;
-
+        items[size--] = null;
         return true;
     }
 }
