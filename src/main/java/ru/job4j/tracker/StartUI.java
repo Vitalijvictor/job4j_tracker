@@ -19,7 +19,14 @@ public class StartUI {
                 System.out.println("Добавленная заявка: " + item);
             } else if (select == 6) {
                 run = false;
-            } Item[] items = tracker.findAll();
+            } else if (select == 1) {
+            System.out.println("=== Show all items ====");
+            Item[] items = tracker.findAll();
+            for (Item item : items) {
+                System.out.println(item);
+            }
+        }
+            Item[] items = tracker.findAll();
             if (items.length > 0) {
                 for (Item item : items) {
                     System.out.println(item);
