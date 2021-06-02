@@ -47,7 +47,7 @@ public class Tracker {
         return rsl;
     }
 
-    public boolean replace(int id, Item item) {
+    public boolean replaceMy(int id, Item item) {
         if (item == null) {
             return false;
         }
@@ -56,6 +56,22 @@ public class Tracker {
             return false;
         }
         item.setId(id);
+        items[index] = item;
+        return true;
+    }
+
+    public boolean replace1(int id, Item item) {
+        int index = indexOf(id);
+        boolean rsl = index != -1;
+        if (rsl) {
+            items[index] = item;
+        }
+        return rsl;
+    }
+
+
+    public boolean replace2(int id, Item item) {
+        int index = indexOf(id);
         items[index] = item;
         return true;
     }

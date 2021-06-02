@@ -3,6 +3,7 @@ package ru.job4j.tracker;
 import org.junit.Test;
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.*;
+import static org.hamcrest.core.IsNull.nullValue;
 
 public class TrackerTest {
     @Test
@@ -52,7 +53,7 @@ public class TrackerTest {
     }
 
     @Test
-    public void whenReplace() {
+    public void whenReplaceMy() {
         Tracker tracker = new Tracker();
         Item bug = new Item();
         bug.setName("Bug");
@@ -60,7 +61,33 @@ public class TrackerTest {
         int id = bug.getId();
         Item bugWithDesc = new Item();
         bugWithDesc.setName("Bug with description");
-        tracker.replace(id, bugWithDesc);
+        tracker.replaceMy(id, bugWithDesc);
+        assertThat(tracker.findById(id).getName(), is("Bug with description"));
+    }
+
+    @Test
+    public void whenReplace1() {
+        Tracker tracker = new Tracker();
+        Item bug = new Item();
+        bug.setName("Bug");
+        tracker.add(bug);
+        int id = bug.getId();
+        Item bugWithDesc = new Item();
+        bugWithDesc.setName("Bug with description");
+        tracker.replace1(id, bugWithDesc);
+        assertThat(tracker.findById(id).getName(), is("Bug with description"));
+    }
+
+    @Test
+    public void whenReplace2() {
+        Tracker tracker = new Tracker();
+        Item bug = new Item();
+        bug.setName("Bug");
+        tracker.add(bug);
+        int id = bug.getId();
+        Item bugWithDesc = new Item();
+        bugWithDesc.setName("Bug with description");
+        tracker.replace2(id, bugWithDesc);
         assertThat(tracker.findById(id).getName(), is("Bug with description"));
     }
 
@@ -72,8 +99,6 @@ public class TrackerTest {
         tracker.add(bug);
         int id = bug.getId();
         tracker.delete(id);
-        //assertThat(tracker.findById(id), is(nullValue()));
-        assertNull(tracker.findById(id));
+        assertThat(tracker.findById(id), is(nullValue()));
     }
-
 }
