@@ -2,16 +2,21 @@ package ru.job4j.tracker;
 
 @SuppressWarnings("checkstyle:EmptyLineSeparator")
 public class StartUI {
+    public static void createItem(Input input, Tracker tracker) {
+        System.out.println("=== Create a new Item ====");
+        String name = input.askStr("Enter name: ");
+        Item item = new Item(name);
+        tracker.add(item);
+    }
+
     public void init(Input input, Tracker tracker) {
         boolean run = true;
         while (run) {
             this.showMenu();
-            System.out.print("Select: ");
-            int select = Integer.parseInt(input.askStr(""));
+            int select = Integer.parseInt(input.askStr("Select: "));
             if (select == 0) {
-                System.out.println("=== Create a new Item ====");
-                System.out.print("Enter name: ");
-                String name = input.askStr("Select: ");
+                StartUI.createItem(input, tracker);
+                String name = input.askStr("Enter name: ");
                 Item item = new Item(name);
                 tracker.add(item);
                 System.out.println("Добавленная заявка: " + item);
@@ -27,10 +32,8 @@ public class StartUI {
                 }
             } else if (select == 2) {
                 System.out.println("=== Edit item ====");
-                System.out.print("Enter id: ");
-                int id = Integer.parseInt(input.askStr("Select: "));
-                System.out.print("Enter name: ");
-                String name = input.askStr("Select: ");
+                int id = Integer.parseInt(input.askStr("Enter id: "));
+                String name = input.askStr("Enter name: ");
                 Item item = new Item(name);
                 if (tracker.replace(id, item)) {
                     System.out.println("Заявка изменена успешно.");
@@ -91,16 +94,4 @@ public class StartUI {
         Tracker tracker = new Tracker();
         new StartUI().init(input, tracker);
     }
-
-    public static void createItem() {
-
-    };
-
-    public static void replaceItem() {
-
-    };
-
-    public static void deteleItem() {
-
-    };
 }
