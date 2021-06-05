@@ -19,6 +19,18 @@ public class StartUI {
         }
     }
 
+    public static void replaceItem(Input input, Tracker tracker) {
+        System.out.println("=== Edit item ====");
+        int id = Integer.parseInt(input.askStr("Enter id: "));
+        String name = input.askStr("Enter name: ");
+        Item item = new Item(name);
+        if (tracker.replace(id, item)) {
+            System.out.println("Заявка изменена успешно.");
+        } else {
+            System.out.println("Ошибка замены заявки.");
+        }
+    }
+
     public void init(Input input, Tracker tracker) {
         boolean run = true;
         while (run) {
@@ -37,15 +49,7 @@ public class StartUI {
                     System.out.println("Хранилище еще не содержит заявок.");
                 }
             } else if (select == 2) {
-                System.out.println("=== Edit item ====");
-                int id = Integer.parseInt(input.askStr("Enter id: "));
-                String name = input.askStr("Enter name: ");
-                Item item = new Item(name);
-                if (tracker.replace(id, item)) {
-                    System.out.println("Заявка изменена успешно.");
-                } else {
-                    System.out.println("Ошибка замены заявки.");
-                }
+                StartUI.replaceItem(input, tracker);
             } else if (select == 3) {
                 StartUI.deleteItem(input, tracker);
             } else if (select == 4) {
