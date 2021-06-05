@@ -1,10 +1,11 @@
 package ru.job4j.tracker;
 
+@SuppressWarnings("checkstyle:EmptyLineSeparator")
 public class StartUI {
     public void init(Input input, Tracker tracker) {
         boolean run = true;
         while (run) {
-            showMenu();
+            this.showMenu();
             System.out.print("Select: ");
             int select = Integer.parseInt(input.askStr(""));
             if (select == 0) {
@@ -90,4 +91,16 @@ public class StartUI {
         Tracker tracker = new Tracker();
         new StartUI().init(input, tracker);
     }
+
+    public static void createItem() {
+
+    };
+
+    public static void replaceItem() {
+
+    };
+
+    public static void deteleItem() {
+
+    };
 }
