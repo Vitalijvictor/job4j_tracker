@@ -1,12 +1,13 @@
 package ru.job4j.tracker;
 
-@SuppressWarnings("checkstyle:EmptyLineSeparator")
+
 public class StartUI {
     public static void createItem(Input input, Tracker tracker) {
         System.out.println("=== Create a new Item ====");
         String name = input.askStr("Enter name: ");
         Item item = new Item(name);
         tracker.add(item);
+        System.out.println("Добавленная заявка: " + item);
     }
 
     public void init(Input input, Tracker tracker) {
@@ -16,10 +17,6 @@ public class StartUI {
             int select = Integer.parseInt(input.askStr("Select: "));
             if (select == 0) {
                 StartUI.createItem(input, tracker);
-                String name = input.askStr("Enter name: ");
-                Item item = new Item(name);
-                tracker.add(item);
-                System.out.println("Добавленная заявка: " + item);
             } else if (select == 1) {
                 System.out.println("=== Show all items ====");
                 Item[] items = tracker.findAll();
