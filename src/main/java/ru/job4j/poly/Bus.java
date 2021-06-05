@@ -6,7 +6,7 @@ public class Bus implements Transport {
 
     @Override
     public void drive() {
-
+        System.out.println("Bus drives with " + passengersQuantity + ".");
     }
 
     @Override
@@ -16,7 +16,7 @@ public class Bus implements Transport {
 
     @Override
     public int refueling(int fuelQuantity) {
-       int price = 0;
-        return price;
+       return  50 * fuelQuantity;
+
     }
 }
