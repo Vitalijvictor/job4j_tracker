@@ -50,6 +50,7 @@ public class StartUITest {
                 new String[] {"0", "Item name", "1"}
         );
         Tracker tracker = new Tracker();
+
         UserAction[] actions = {
                 new CreateAction(),
                 new ExitAction()
@@ -79,11 +80,11 @@ public class StartUITest {
     @Test
     public void whenDeleteItem() {
         Tracker tracker = new Tracker();
+        /* Добавим в tracker новую заявку */
+        Item item = tracker.add(new Item("Deleted item"));
+        /* Входные данные должны содержать ID добавленной заявки item.getId() */
         Input in = new StubInput(
-                new String[] {String.valueOf(1), "test"});
-        Item item = tracker.add(new Item("test"));
-        new StubInput(
-                new String[] {"1", "test"}
+                new String[] {"0" /* входные параметры для DeleteAction */, "1", item.getId() + ""}
         );
         UserAction[] actions = {
                 new DeleteAction(),
