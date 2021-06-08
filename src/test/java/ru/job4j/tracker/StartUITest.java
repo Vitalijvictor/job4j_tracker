@@ -1,11 +1,13 @@
-
 package ru.job4j.tracker;
 
 import org.junit.Test;
-import static org.hamcrest.core.Is.is;
-import static org.junit.Assert.*;
+import static org.hamcrest.Matchers.is;
+import static org.hamcrest.Matchers.nullValue;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertThat;
 
 public class StartUITest {
+
     @Test
     public void whenAddItem() {
         String[] answers = {"Fix PC"};
@@ -36,8 +38,9 @@ public class StartUITest {
         String[] answers = {
                 String.valueOf(item.getId())
         };
-        Item replaced = tracker.findById(item.getId());
         StartUI.deleteItem(new StubInput(answers), tracker);
+        Item replaced = tracker.findById(item.getId());
+        assertNull(replaced);
     }
-
 }
+
