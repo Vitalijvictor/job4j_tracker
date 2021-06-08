@@ -1,3 +1,4 @@
+/*
 package ru.job4j.tracker;
 
 public class StartUI {
@@ -34,31 +35,12 @@ public class StartUI {
         new StartUI().init(input, tracker, actions);
     }
 }
+*/
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
 package ru.job4j.tracker;
 
 public class StartUI {
@@ -169,4 +151,3 @@ public class StartUI {
         new StartUI().init(input, tracker);
     }
 }
-*/
