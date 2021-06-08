@@ -1,8 +1,5 @@
 package ru.job4j.tracker;
 
-
-import java.time.LocalDateTime;
-
 public class Item {
     private int id;
     private String name;
@@ -40,13 +37,13 @@ public class Item {
         this.name = name;
     }
 
-
-    @SuppressWarnings("checkstyle:OperatorWrap")
     @Override
     public String toString() {
-        return "Item{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                '}';
+        return "Item{" + "id="
+                + id
+                + ", name='"
+                + name
+                + '\''
+                + '}';
     }
 }
