@@ -6,7 +6,6 @@ import java.time.LocalDateTime;
 public class Item {
     private int id;
     private String name;
-    private String job;
 
     public Item(String name) {
         this.name = name;
@@ -23,7 +22,6 @@ public class Item {
     public Item(int id, String name, String job) {
         this.id = id;
         this.name = name;
-        this.job = job;
     }
 
     public int getId() {
@@ -42,20 +40,13 @@ public class Item {
         this.name = name;
     }
 
-    public String getJob() {
-        return job;
-    }
 
-    public void setJob(String job) {
-        this.job = job;
-    }
-
+    @SuppressWarnings("checkstyle:OperatorWrap")
     @Override
     public String toString() {
         return "Item{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", job='" + job + '\'' +
                 '}';
     }
 }
