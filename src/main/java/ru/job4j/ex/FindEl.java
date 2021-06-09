@@ -3,22 +3,23 @@ package ru.job4j.ex;
 public class FindEl {
     public static int indexOf(String[] value, String key) throws ElementNotFoundException {
         int rsl = -1;
-        /* цикл fori, поскольку нам надо найти индекс искомого элемента в массиве */
-        for (String i : value) {
-            value[Integer.parseInt(i)] = value[Integer.parseInt(key)];
+
+        for (int i = 0; i < value.length; i++) {
+            if (value[i].equals(key)) {
+                return i;
+            } else {
+                throw new ElementNotFoundException("there is no any element found");
+            }
         }
-        if (value[Integer.parseInt(key)] == null) {
-            throw new ElementNotFoundException("There is no element");
-        } else {
-            return rsl;
-        }
+        return rsl;
     }
 
     public static void main(String[] args) {
         try {
-            indexOf();
+            indexOf([1], 1)
         } catch (UserInputException e) {
             e.printStackTrace();
         }
     }
+
 }
