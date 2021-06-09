@@ -59,15 +59,18 @@ public class StartUITest {
         assertThat(tracker.findAll()[0].getName(), is("Item name"));
     }
 
+ */
+
     @Test
     public void whenReplaceItem() {
         Tracker tracker = new Tracker();
+        /* Добавим в tracker новую заявку */
+        Item item = tracker.add(new Item("Replaced item"));
+        /* Входные данные должны содержать ID добавленной заявки item.getId() */
+
+        String replacedName = "New item name";
         Input in = new StubInput(
-                new String[] {String.valueOf(1), "name"});
-        Item item = tracker.add(new Item("name"));
-        String replacedName = "name";
-        new StubInput(
-                new String[] {"1",  "name"}
+                new String[] {"0", String.valueOf(item), "1"}
         );
         UserAction[] actions = {
                 new ReplaceAction(),
@@ -77,6 +80,7 @@ public class StartUITest {
         assertThat(tracker.findById(item.getId()).getName(), is(replacedName));
     }
 
+/*
     @Test
     public void whenDeleteItem() {
         Tracker tracker = new Tracker();
@@ -90,7 +94,7 @@ public class StartUITest {
         };
         new StartUI().init(in, tracker, actions);
         assertThat(tracker.findById(item.getId()), is(nullValue()));
-    }*/
+    }
 
     @Test
     public void ShowAllAction() {
@@ -107,7 +111,7 @@ public class StartUITest {
                 "Menu." + System.lineSeparator()
                         + "0. Show all" + System.lineSeparator()
         ));
-    }
+    }*/
 }
 
 
