@@ -42,7 +42,7 @@ public class StartUITest {
         Item replaced = tracker.findById(item.getId());
         assertNull(replaced);
     }
-    */
+
 
     @Test
     public void whenCreateItem() {
@@ -80,9 +80,7 @@ public class StartUITest {
     @Test
     public void whenDeleteItem() {
         Tracker tracker = new Tracker();
-        /* Добавим в tracker новую заявку */
         Item item = tracker.add(new Item("Deleted item"));
-        /* Входные данные должны содержать ID добавленной заявки item.getId() */
         Input in = new StubInput(
                 new String[] {"0", String.valueOf(item.getId()), "1"}
         );
@@ -92,6 +90,23 @@ public class StartUITest {
         };
         new StartUI().init(in, tracker, actions);
         assertThat(tracker.findById(item.getId()), is(nullValue()));
+    }*/
+
+    @Test
+    public void ShowAllAction() {
+        Output out = new StubOutput();
+        Input in = new StubInput(
+                new String[] {"0"}
+        );
+        Tracker tracker = new Tracker();
+        UserAction[] actions = {
+                new ShowAllAction()
+        };
+        new StartUI(out).init(in, tracker, actions);
+        assertThat(out.toString(), is(
+                "Menu." + System.lineSeparator()
+                        + "0. Show all" + System.lineSeparator()
+        ));
     }
 }
 
