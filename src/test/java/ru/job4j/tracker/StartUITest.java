@@ -3,8 +3,7 @@ package ru.job4j.tracker;
 import org.junit.Test;
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.nullValue;
-import static org.junit.Assert.assertNull;
-import static org.junit.Assert.assertThat;
+import static org.junit.Assert.*;
 
 public class StartUITest {
 /*
@@ -59,18 +58,15 @@ public class StartUITest {
         assertThat(tracker.findAll()[0].getName(), is("Item name"));
     }
 
- */
+
 
     @Test
-    public void whenReplaceItem() {
+    public void whenReplaceItem1() {
         Tracker tracker = new Tracker();
-        /* Добавим в tracker новую заявку */
         Item item = tracker.add(new Item("Replaced item"));
-        /* Входные данные должны содержать ID добавленной заявки item.getId() */
-
         String replacedName = "New item name";
         Input in = new StubInput(
-                new String[] {"0", String.valueOf(item), "1"}
+                new String[] {"0", String.valueOf(item.getId()), "1"}
         );
         UserAction[] actions = {
                 new ReplaceAction(),
@@ -80,7 +76,7 @@ public class StartUITest {
         assertThat(tracker.findById(item.getId()).getName(), is(replacedName));
     }
 
-/*
+
     @Test
     public void whenDeleteItem() {
         Tracker tracker = new Tracker();
@@ -95,23 +91,25 @@ public class StartUITest {
         new StartUI().init(in, tracker, actions);
         assertThat(tracker.findById(item.getId()), is(nullValue()));
     }
-
+*/
     @Test
     public void ShowAllAction() {
         Output out = new StubOutput();
-        Input in = new StubInput(
-                new String[] {"0"}
-        );
         Tracker tracker = new Tracker();
+        Item item = tracker.add(new Item("Test1"));
+        Input in = new StubInput(
+                new String[] {"0", "1"}
+        );
         UserAction[] actions = {
-                new ShowAllAction()
+                new ShowAllAction(),
+                new ExitAction()
         };
         new StartUI(out).init(in, tracker, actions);
         assertThat(out.toString(), is(
                 "Menu." + System.lineSeparator()
                         + "0. Show all" + System.lineSeparator()
         ));
-    }*/
+    }
 }
 
 
