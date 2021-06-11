@@ -13,8 +13,17 @@ public class StubOutput implements Output {
         buffer.append(System.lineSeparator());
     }
 
+    public void ok() {
+
+    }
+
     @Override
     public String toString() {
         return buffer.toString();
+    }
+
+    public void writeToConsole() {
+        System.out.println(buffer);
+
     }
 }
