@@ -90,8 +90,8 @@ public class StartUITest {
                 + "0. Show All" + System.lineSeparator()
                 + "1. Exit" + System.lineSeparator()
                 + "=== Show all items ====" + System.lineSeparator()
-                + "Item{id=1, name='" + item1.getName() + "'}" + System.lineSeparator()
-                + "Item{id=2, name='" + item2.getName() + "'}" + System.lineSeparator()
+                + "Item{id=1, name='" + item1 + System.lineSeparator()
+                + "Item{id=2, name='" + item2 + System.lineSeparator()
                 + "Menu." + System.lineSeparator()
                 + "0. Show All" + System.lineSeparator()
                 + "1. Exit" + System.lineSeparator();
@@ -116,7 +116,7 @@ public class StartUITest {
                 + "0. Find by name" + System.lineSeparator()
                 + "1. Exit" + System.lineSeparator()
                 + "=== Find items by name ====" + System.lineSeparator()
-                + "Item{id=1, name='First item'}" + System.lineSeparator()
+                + "Item{id=1, name='" + item1 + System.lineSeparator()
                 + "Menu." + System.lineSeparator()
                 + "0. Find by name" + System.lineSeparator()
                 + "1. Exit" + System.lineSeparator();
@@ -140,7 +140,7 @@ public class StartUITest {
                 + "0. Find by id" + System.lineSeparator()
                 + "1. Exit" + System.lineSeparator()
                 + "=== Find item by id ====" + System.lineSeparator()
-                + "Item{id=1, name='First item'}" + System.lineSeparator()
+                + "Item{id=1, name='" + item1 + System.lineSeparator()
                 + "Menu." + System.lineSeparator()
                 + "0. Find by id" + System.lineSeparator()
                 + "1. Exit" + System.lineSeparator();
