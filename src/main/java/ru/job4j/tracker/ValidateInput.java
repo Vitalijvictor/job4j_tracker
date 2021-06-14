@@ -35,8 +35,7 @@ public class ValidateInput implements Input {
         char[] check = value.toCharArray();
         for (char num : check) {
             if (num < 48 || num > 57) {
-                rsl = false;
-                break;
+                throw new NumberFormatException("Please enter only numbers from 0 to 6");
             }
         }
         return rsl;
