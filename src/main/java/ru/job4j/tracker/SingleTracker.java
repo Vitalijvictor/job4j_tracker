@@ -28,6 +28,22 @@ public final class SingleTracker {
     }
 
     public Item[] findByName(String key) {
-        return Arrays.copyOf(rsl, counter);
+        return null;
+    }
+
+    public Item[] findAll() {
+        return null;
+    }
+
+    private int indexOf(int id) {
+        return 0;
+    }
+
+    public boolean replace(int id, Item item) {
+        return true;
+    }
+
+    public boolean delete(int id) {
+        return true;
     }
 }
