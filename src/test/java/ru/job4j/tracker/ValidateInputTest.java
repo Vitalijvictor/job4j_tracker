@@ -48,6 +48,6 @@ public class ValidateInputTest {
         );
         ValidateInput input = new ValidateInput(out, in);
         int selected = input.askInt("Enter menu:");
-        assertThat(selected, is("Please enter validate data again."));
+        assertThat(selected, is(-2));
     }
 }
