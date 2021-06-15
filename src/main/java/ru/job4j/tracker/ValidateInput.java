@@ -23,21 +23,9 @@ public class ValidateInput implements Input {
                 value = in.askInt(question);
                 invalid = false;
             } catch (NumberFormatException nfe) {
-                String rsl = in.askStr(question);
                 out.println(("Please enter validate data again."));
             }
         } while (invalid);
         return value;
-    }
-
-    private boolean isNumber(String value) {
-        boolean rsl = true;
-        char[] check = value.toCharArray();
-        for (char num : check) {
-            if (num < 48 || num > 57) {
-                throw new NumberFormatException("Please enter only numbers from 0 to 6");
-            }
-        }
-        return rsl;
     }
 }
