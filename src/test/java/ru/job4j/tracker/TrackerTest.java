@@ -1,6 +1,9 @@
 package ru.job4j.tracker;
 
 import org.junit.Test;
+
+import java.util.List;
+
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.*;
 import static org.hamcrest.core.IsNull.nullValue;
@@ -28,15 +31,12 @@ public class TrackerTest {
         item1.setName("test2");
         tracker.add(item1);
 
-        Item[] allItems = tracker.findAll();
-        assertEquals(2, allItems.length);
-        assertEquals("test1", allItems[0].getName());
+        List<Item> allItems = tracker.findAll();
+        assertEquals(2, allItems.size());
+        assertEquals("test1", allItems.get(0).getName());
 
-        assertEquals(1, allItems[0].getId());
-        assertEquals(2, allItems[1].getId());
-
-//        for (Item i : allItems)
-//            System.out.println(Integer.valueOf(i.getId()) + " : " + i.getName());
+        assertEquals(1, allItems.get(0).getId());
+        assertEquals(2, allItems.get(1).getId());
     }
 
     @Test
@@ -47,7 +47,7 @@ public class TrackerTest {
         item.setName("test1");
         tracker.add(item);
 
-        assertEquals(item, tracker.findById(1) );
+        assertEquals(item, tracker.findById(1));
         assertNull(tracker.findById(2));
 
     }
@@ -61,33 +61,7 @@ public class TrackerTest {
         int id = bug.getId();
         Item bugWithDesc = new Item();
         bugWithDesc.setName("Bug with description");
-        tracker.replaceMy(id, bugWithDesc);
-        assertThat(tracker.findById(id).getName(), is("Bug with description"));
-    }
-
-    @Test
-    public void whenReplace1() {
-        Tracker tracker = new Tracker();
-        Item bug = new Item();
-        bug.setName("Bug");
-        tracker.add(bug);
-        int id = bug.getId();
-        Item bugWithDesc = new Item();
-        bugWithDesc.setName("Bug with description");
-        tracker.replace1(id, bugWithDesc);
-        assertThat(tracker.findById(id).getName(), is("Bug with description"));
-    }
-
-    @Test
-    public void whenReplace2() {
-        Tracker tracker = new Tracker();
-        Item bug = new Item();
-        bug.setName("Bug");
-        tracker.add(bug);
-        int id = bug.getId();
-        Item bugWithDesc = new Item();
-        bugWithDesc.setName("Bug with description");
-        tracker.replace2(id, bugWithDesc);
+        tracker.replace(id, bugWithDesc);
         assertThat(tracker.findById(id).getName(), is("Bug with description"));
     }
 

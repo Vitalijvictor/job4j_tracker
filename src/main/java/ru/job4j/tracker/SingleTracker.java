@@ -29,12 +29,12 @@ public final class SingleTracker {
 
     public Item[] findByName(String key) {
 
-        return tracker.findByName(key);
+        return tracker.findByName(key).toArray(new Item[0]);
     }
 
     public Item[] findAll() {
 
-        return tracker.findAll();
+        return tracker.findAll().toArray(new Item[0]);
     }
 
     public boolean replace(int id, Item item) {
