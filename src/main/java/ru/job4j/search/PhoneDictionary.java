@@ -19,21 +19,11 @@ public class PhoneDictionary {
         ArrayList<Person> result = new ArrayList<>();
         key = key.toLowerCase();
         for (Person person : persons) {
-            if (person.getName().toLowerCase().contains(key)) {
+            if (person.getName().toLowerCase().contains(key)
+                    || (person.getSurname().toLowerCase().contains(key))
+                    || (person.getPhone().toLowerCase().contains(key))
+                    || (person.getAddress().toLowerCase().contains(key))) {
                 result.add(person);
-                continue;
-            }
-            if (person.getSurname().toLowerCase().contains(key)) {
-                result.add(person);
-                continue;
-            }
-            if (person.getPhone().toLowerCase().contains(key)) {
-                result.add(person);
-                continue;
-            }
-            if (person.getAddress().toLowerCase().contains(key)) {
-                result.add(person);
-                continue;
             }
         }
         return result;
