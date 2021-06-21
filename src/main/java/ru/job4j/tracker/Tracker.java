@@ -16,12 +16,7 @@ public class Tracker {
     }
 
     public List<Item> findAll() {
-        List<Item> itemsCopy = new ArrayList<Item>();
-        /*for (Item item : items) {
-            itemsCopy.add(item);
-        }*/
-        itemsCopy = List.copyOf(items);
-        return itemsCopy;
+        return List.copyOf(items);
     }
 
     public List<Item> findByName(String key) {
