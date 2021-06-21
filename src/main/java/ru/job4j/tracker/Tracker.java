@@ -17,16 +17,16 @@ public class Tracker {
 
     public List<Item> findAll() {
         List<Item> itemsCopy = new ArrayList<Item>();
-        for (Item item : items) {
+        /*for (Item item : items) {
             itemsCopy.add(item);
-        }
+        }*/
+        itemsCopy = List.copyOf(items);
         return itemsCopy;
     }
 
     public List<Item> findByName(String key) {
         List<Item> itemNames = new ArrayList<Item>();
-        for (int index = 0; index < items.size(); index++) {
-            Item item = items.get(index);
+        for (Item item : items) {
             if (key.equals(item.getName())) {
                 itemNames.add(item);
             }
