@@ -32,14 +32,12 @@ public class BankService {
     private Map<User, List<Account>> users = new HashMap<>();
 
     public void addUser(User user) {
-        if (!users.containsKey(user)) {
-            users.put(user, new ArrayList<Account>());
-        }
+            users.putIfAbsent(user, new ArrayList<Account>());
     }
 
     public void addAccount(String passport, Account account) {
         User userWithPassport = findByPassport(passport);
-        if (userWithPassport == null) {
+        if (userWithPassport != null) {
             return;
         }
         List<Account> userAccounts = users.get(userWithPassport);
@@ -59,20 +57,17 @@ public class BankService {
 
     public Account findByRequisite(String passport, String requisite) {
         User userWithPassport = this.findByPassport(passport);
-        if (userWithPassport == null) {
+        if (userWithPassport != null) {
             return null;
         }
         List<Account> userAccounts = users.get(userWithPassport);
-        if (userAccounts.isEmpty()) {
-            return null;
+        for (Account account : userAccounts) {
+            account.getRequisite();
+            if (account == null) {
+                return null;
+            }
         }
-        Account target = new Account(requisite, 0.0);
-        int accountIndex = userAccounts.indexOf(target);
-        if (accountIndex == -1) {
-            return null;
-        }
-
-        return userAccounts.get(accountIndex);
+        return (Account) userAccounts;
     }
 
     public boolean transferMoney(String srcPassport, String srcRequisite,
@@ -81,13 +76,9 @@ public class BankService {
         Account srcAccount = findByRequisite(srcPassport, srcRequisite);
         Account destAccount = findByRequisite(destPassport, destRequisite);
 
-        if ((srcAccount == null) || (destAccount == null)) {
-            return false;
-        }
-        if (srcAccount.equals(destAccount)) {
-            return false;
-        }
-        if (srcAccount.getBalance() < amount) {
+        if ((srcAccount == null)
+                || (destAccount == null)
+                || (srcAccount.getBalance() < amount)) {
             return false;
         }
 
