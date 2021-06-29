@@ -62,6 +62,7 @@ public class BankService {
             for (Account found : accounts) {
                 if (found.getRequisite().equals(requisite)) {
                     result = found;
+                    break;
                 }
             }
         }
@@ -78,8 +79,7 @@ public class BankService {
             srcAccount.setBalance(srcAccount.getBalance() - amount);
             destAccount.setBalance(destAccount.getBalance() + amount);
             return true;
-        } else {
-            return false;
         }
+            return false;
     }
 }
