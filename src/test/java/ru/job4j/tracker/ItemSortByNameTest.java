@@ -18,7 +18,12 @@ public class ItemSortByNameTest {
             );
             Collections.sort(items, new ItemSortByNameStraight());
 
-            assertEquals("[Item{id=100, name='AReboot server'}, Item{id=20, name='EImpl task'}, Item{id=4, name='ZFix bugs'}]", items.toString());
+            List<Item> items1 = Arrays.asList(
+                    new Item(100, "AReboot server"),
+                    new Item(20, "EImpl task"),
+                    new Item(4, "ZFix bugs")
+            );
+            assertEquals(items, items1);
     }
 
     @Test
