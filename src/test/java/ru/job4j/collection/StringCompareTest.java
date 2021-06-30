@@ -2,7 +2,7 @@ package ru.job4j.collection;
 
 import org.junit.Test;
 
-/*
+
 import static org.hamcrest.Matchers.greaterThan;
 import static org.hamcrest.Matchers.lessThan;
 import static org.hamcrest.core.Is.is;
@@ -59,4 +59,3 @@ public class StringCompareTest {
         assertThat(rst, lessThan(0));
     }
 }
- */
