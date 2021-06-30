@@ -6,4 +6,3 @@ public class Autobus implements Vehicle {
         System.out.println("Driving");
     }
 }
-

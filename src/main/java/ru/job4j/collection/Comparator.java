@@ -1,4 +1,5 @@
-package ru.job4j.collection;
+
+/*package ru.job4j.collection;
 
 import java.util.Comparator;
 
@@ -18,3 +19,4 @@ public class StringCompare implements Comparator<String> {
         }
     }
 }
+*/
