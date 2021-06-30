@@ -6,9 +6,9 @@ public class LexSort implements Comparator<String> {
 
     @Override
     public int compare(String left, String right) {
-        String[] l = left.split(".");
+        String[] l = left.split(".").;
         String[] r = right.split(".");
-        int rsl = Integer.compare(l[], r[]);
+        int rsl = Integer.compare(l, r);
         return rsl;
     }
 }
