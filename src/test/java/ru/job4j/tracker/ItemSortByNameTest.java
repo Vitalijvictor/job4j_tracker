@@ -35,7 +35,12 @@ public class ItemSortByNameTest {
         );
         Collections.sort(items, new ItemSortByNameBackwards());
 
-        assertEquals("[Item{id=4, name='ZFix bugs'}, Item{id=20, name='EImpl task'}, Item{id=100, name='AReboot server'}]", items.toString());
+        List<Item> items1 = Arrays.asList(
+                new Item(4, "ZFix bugs"),
+                new Item(20, "EImpl task"),
+                new Item(100, "AReboot server")
+        );
+        assertEquals(items, items1);
     }
 
     @Test
@@ -47,6 +52,11 @@ public class ItemSortByNameTest {
         );
         Collections.sort(items, new ItemSortByNameStraight().reversed());
 
-        assertEquals("[Item{id=4, name='ZFix bugs'}, Item{id=20, name='EImpl task'}, Item{id=100, name='AReboot server'}]", items.toString());
+        List<Item> items1 = Arrays.asList(
+                new Item(4, "ZFix bugs"),
+                new Item(20, "EImpl task"),
+                new Item(100, "AReboot server")
+        );
+        assertEquals(items, items1);
     }
 }
