@@ -56,8 +56,6 @@ public class JobTest {
         assertThat(rsl, lessThan(1));
     }
 
-
-
     @Test
     public void whenBackwardsComparatorByNameAndPriority() {
         Comparator<Job> cmpNamePriority = new JobNameComparatorBackwards().thenComparing(new JobPriorityComparatorBackwards());

@@ -29,11 +29,15 @@ public class Book {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
         Book book = (Book) o;
-        return numberOfPages == book.numberOfPages &&
-                Objects.equals(name, book.name);
+        return numberOfPages == book.numberOfPages
+                && Objects.equals(name, book.name);
     }
 
     @Override

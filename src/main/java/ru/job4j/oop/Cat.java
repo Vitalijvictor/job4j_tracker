@@ -6,8 +6,7 @@ public class Cat {
 
     private String name;
 
-    void giveNick(String nick){
-
+    void giveNick(String nick) {
         this.name = nick;
     }
 

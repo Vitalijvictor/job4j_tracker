@@ -9,6 +9,7 @@ public class College {
         student.setFaculty("computer science");
         student.setCreated(new Date());
 
-        System.out.println(student.getFullName() + " is student of " + student.getFaculty() + " faculty " + student.getCreated());
+        System.out.println(student.getFullName() + " is student of "
+                + student.getFaculty() + " faculty " + student.getCreated());
     }
 }

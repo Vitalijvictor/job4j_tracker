@@ -15,6 +15,4 @@ public class DivByZero {
         int rsl = div(10, 0);
         System.out.println(rsl);
     }
-
-
 }

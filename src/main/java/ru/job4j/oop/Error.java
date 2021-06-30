@@ -21,7 +21,7 @@ public class Error {
         this.message = message;
     }
 
-    public  Error(){
+    public  Error() {
         active = true;
         status = 300;
         message = "Game over";
@@ -37,5 +37,4 @@ public class Error {
         System.out.println("Статус: " + status);
         System.out.println("Сообщение: " + message);
     }
-
 }

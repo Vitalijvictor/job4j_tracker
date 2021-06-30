@@ -14,9 +14,7 @@ public class Library {
         Book firetales = new Book("Storybook", 165);
         Book cleanCode = new Book("Clean code", 421);
 
-
         Book[] bk =  new Book[4];
-
         bk[0] = misery;
         bk[1] = richDad;
         bk[2] = firetales;

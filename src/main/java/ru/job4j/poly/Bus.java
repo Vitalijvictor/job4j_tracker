@@ -2,8 +2,7 @@ package ru.job4j.poly;
 
 public class Bus implements Transport {
     private int passengersQuantity;
-
-
+    
     @Override
     public void drive() {
         System.out.println("Bus drives with " + passengersQuantity + ".");

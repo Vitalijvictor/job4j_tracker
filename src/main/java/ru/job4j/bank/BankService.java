@@ -5,29 +5,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/*
-user1 = {passport: "1234", username: "Vasya"}
-user2 = {passport: "5678", username: "Petya"}
-account1 = {req: "ZXCV45", balance: 100}
-account2 = {req: "ABCD987", balance: 400}
-account3 = {req: "XXX", balance: 999}
-
-map users = {
-    {passport: "1234", username: "Vasya"} : ({req: "ZXCV45", balance: 100}, {req: "ABCD987", balance: 400}),
-    {passport: "5678", username: "Petya"} : ({req: "XXX", balance: 999})
-}
-
-findByPassport
-keySet = ({passport: "1234", username: "Vasya"}, {passport: "5678", username: "Petya"})
-user = {passport: "5678", username: "Petya"}
-
-accounts = users.get({passport: "5678", username: "Petya"})
-   0
-= ({req: "XXX", balance: 999})
-
-new Account(requisite, 0.0)
-{req: "XXX", balance: 0.0}
-* */
 public class BankService {
     private Map<User, List<Account>> users = new HashMap<>();
 
