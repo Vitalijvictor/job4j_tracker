@@ -2,10 +2,20 @@ package ru.job4j.bank;
 
 import java.util.Objects;
 
+/**
+ * Класс содержит в себе данные о реквизите и балансе и содержит поля конструктор и методы.
+ * @author Slivnojs Vitalijs
+ * @version 1.0
+ */
 public class Account {
     private String requisite;
     private double balance;
 
+    /**
+     * Конструктор содержащий баланс и реквизит
+     * @param requisite
+     * @param balance
+     */
     public Account(String requisite, double balance) {
         this.requisite = requisite;
         this.balance = balance;
