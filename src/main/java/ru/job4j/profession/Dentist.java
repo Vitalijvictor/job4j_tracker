@@ -10,6 +10,7 @@ public class Dentist extends Doctor {
         this.isBoi = isBoi;
     }
 
+
     public int painRelieverQuantity() {
         return 0;
     }
