@@ -6,11 +6,6 @@ public class Item implements Comparable<Item> {
     private int id;
     private String name;
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, name);
-    }
-
     public Item(String name) {
         this.name = name;
     }
@@ -57,6 +52,11 @@ public class Item implements Comparable<Item> {
     @Override
     public int compareTo(Item o) {
         return Integer.compare(id, o.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name);
     }
 
     @Override

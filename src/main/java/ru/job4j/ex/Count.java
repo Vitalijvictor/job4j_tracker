@@ -1,9 +1,9 @@
-/*
-java.lang.IllegalArgumentException - метод вызывается с некорректными параметрами.
+/**
+*java.lang.IllegalArgumentException - метод вызывается с некорректными параметрами.
 
-java.lang.IllegalStateException - метод вызывается с объекта в не корректном состоянии.
+*java.lang.IllegalStateException - метод вызывается с объекта в не корректном состоянии.
 
-java.lang.NullPointerException - методы вызывается у переменной, которая инициализирована null ссылкой.
+*java.lang.NullPointerException - методы вызывается у переменной, которая инициализирована null ссылкой.
  */
 
 package ru.job4j.ex;
