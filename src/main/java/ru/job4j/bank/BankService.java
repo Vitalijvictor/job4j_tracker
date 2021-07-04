@@ -6,7 +6,8 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Класс работает данными
+ * Класс работает с массивом данных от пользователей, а именно(requisite,
+ * balance и passport.
  */
 public class BankService {
     private Map<User, List<Account>> users = new HashMap<>();
@@ -15,6 +16,12 @@ public class BankService {
         users.putIfAbsent(user, new ArrayList<Account>());
     }
 
+    /**
+     * Данный метод ищет user по номеру паспорта и если находит
+     * то добавляет account.
+     * @param passport
+     * @param account
+     */
     public void addAccount(String passport, Account account) {
         User userWithPassport = findByPassport(passport);
         if (userWithPassport != null) {
@@ -25,6 +32,11 @@ public class BankService {
         }
     }
 
+    /**
+     * Метод ищет user по паспорту.
+     * @param passport
+     * @return
+     */
     public User findByPassport(String passport) {
         for (User user : users.keySet()) {
             if (user.getPassport().equals(passport)) {
@@ -34,6 +46,12 @@ public class BankService {
         return null;
     }
 
+    /**
+     * Данный метод ищет пользователя по реквизиту.
+     * @param passport
+     * @param requisite
+     * @return
+     */
     public Account findByRequisite(String passport, String requisite) {
         Account result = null;
         User user = findByPassport(passport);
@@ -49,6 +67,16 @@ public class BankService {
         return result;
     }
 
+    /**
+     * Метод проверяет перечисления суммы и сравнивает количество средств
+     * на балансе у одного и у другого user.
+     * @param srcPassport
+     * @param srcRequisite
+     * @param destPassport
+     * @param destRequisite
+     * @param amount
+     * @return
+     */
     public boolean transferMoney(String srcPassport, String srcRequisite,
                                  String destPassport, String destRequisite, double amount) {
 

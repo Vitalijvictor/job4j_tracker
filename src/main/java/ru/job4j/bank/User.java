@@ -2,6 +2,10 @@ package ru.job4j.bank;
 
 import java.util.Objects;
 
+/**
+ * Класс содержит в себе данные passport и username о user, конструктор,
+ * геттеры и сеттеры.
+ */
 public class User {
     private String passport;
     private String username;
