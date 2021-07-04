@@ -48,7 +48,8 @@ public class JobTest {
 
     @Test
     public void whenStraightComparatorByNameAndPriority() {
-        Comparator<Job> cmpNamePriority = new JobNameComparatorStraight().thenComparing(new JobPriorityComparatorStraight());
+        Comparator<Job> cmpNamePriority = new JobNameComparatorStraight().
+                thenComparing(new JobPriorityComparatorStraight());
         int rsl = cmpNamePriority.compare(
                 new Job("Apple", 0),
                 new Job("Banana", 1)
@@ -58,7 +59,8 @@ public class JobTest {
 
     @Test
     public void whenBackwardsComparatorByNameAndPriority() {
-        Comparator<Job> cmpNamePriority = new JobNameComparatorBackwards().thenComparing(new JobPriorityComparatorBackwards());
+        Comparator<Job> cmpNamePriority = new JobNameComparatorBackwards().
+                thenComparing(new JobPriorityComparatorBackwards());
         int rsl = cmpNamePriority.compare(
                 new Job("Impl task", 0),
                 new Job("Fix bug", 1)
