@@ -18,3 +18,8 @@ notifications:
       - vitalijvictor@gmail.com
     on_success: never # default: change
     on_failure: always # default: always
+
+
+env:
+global:
+CODECOV_TOKEN = b92af02f-1c36-4c34-99f2-05c87365ab6a
