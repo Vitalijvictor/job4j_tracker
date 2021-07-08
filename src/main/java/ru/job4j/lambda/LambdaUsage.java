@@ -5,8 +5,8 @@ import java.util.Comparator;
 public class LambdaUsage {
     public static void main(String[] args) {
         Comparator<String> cmpDescSize = (left, right) -> {
-            System.out.println("compareDes - " + right.compareTo(left));
-            return right.compareTo(left);
+            System.out.println("compareDes - " + right.length() + " and " + left.length());
+            return Integer.compare(right.length(), left.length());
         };
     }
 }
