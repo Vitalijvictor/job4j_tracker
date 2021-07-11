@@ -1,3 +1,4 @@
+
 package ru.job4j.lambda;
 
 import java.lang.reflect.Array;
@@ -20,7 +21,7 @@ public class StreamUsageInteger {
         numbers.add(10);
 
         List<Integer> positiveNumbers = numbers.stream().
-                filter(numbers % 2 == 0).collect(Collectors.toList());
+                filter(numbers > 0).collect(Collectors.toList());
         positiveNumbers.forEach(System.out::println);
 
     }
