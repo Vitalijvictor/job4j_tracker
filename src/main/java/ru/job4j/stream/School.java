@@ -10,8 +10,6 @@ import java.util.stream.Stream;
 public class School {
     public List<Student> collect(List<Student> students,
                                  Predicate<Student> predict) {
-
-        Stream<Student> studentStream = students.stream();
-        return studentStream.filter(predict).collect(Collectors.toList());
+        return students.stream().filter(predict).collect(Collectors.toList());
     }
 }
