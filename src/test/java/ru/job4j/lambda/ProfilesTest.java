@@ -34,21 +34,21 @@ public class ProfilesTest {
     @Test
     public void sortedWithoutDuplicate() {
         List<Profile> profiles = List.of(
-                new Profile("Molly", "Gent", "Bruggestraat", 5, 4),
                 new Profile("Johan", "Antwerpen", "Statiestraat", 10, 5),
                 new Profile("Dirk", "Deurne", "Mollenstraat", 8, 3),
                 new Profile("Lola", "Brussel", "Ryckenstraat", 1, 2),
                 new Profile("Molly", "Gent", "Bruggestraat", 5, 4),
-                new Profile("Dirk", "Deurne", "Mollenstraat", 8, 3)
-        );
-        List<Profile> expectedAddresses = Arrays.asList(
-                new Profile("Johan", "Antwerpen", "Statiestraat", 10, 5),
                 new Profile("Dirk", "Deurne", "Mollenstraat", 8, 3),
-                new Profile("Lola", "Brussel", "Ryckenstraat", 1, 2),
                 new Profile("Molly", "Gent", "Bruggestraat", 5, 4)
         );
+        List<Address> expectedAddresses = Arrays.asList(
+                new Address("Antwerpen", "Statiestraat", 10, 5),
+                new Address("Brussel", "Ryckenstraat", 1, 2),
+                new Address("Deurne", "Mollenstraat", 8, 3),
+                new Address("Gent", "Bruggestraat", 5, 4)
+        );
 
-        profiles.stream().distinct().collect(Collectors.toList());
-        assertThat(profiles, is(expectedAddresses));
+        List<Address> addresses = (new Profiles()).collect(profiles);
+        assertThat(addresses, is(expectedAddresses));
     }
 }
