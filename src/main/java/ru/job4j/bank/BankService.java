@@ -37,14 +37,23 @@ public class BankService {
      * @param passport
      * @return
      */
+//    public User findByPassport(String passport) {
+//        for (User user : users.keySet()) {
+//            if (user.getPassport().equals(passport)) {
+//                return user;
+//            }
+//        }
+//        return null;
+//    }
+
     public User findByPassport(String passport) {
-        for (User user : users.keySet()) {
-            if (user.getPassport().equals(passport)) {
-                return user;
-            }
-        }
-        return null;
+        return users.keySet()
+                .stream()
+                .filter(s -> s.getPassport().equals(passport))
+                .findFirst()
+                .orElse(null);
     }
+
 
     /**
      * Данный метод ищет пользователя по реквизиту.
@@ -52,19 +61,32 @@ public class BankService {
      * @param requisite
      * @return
      */
+//    public Account findByRequisite(String passport, String requisite) {
+//        Account result = null;
+//        User user = findByPassport(passport);
+//        if (user != null) {
+//            List<Account> accounts = users.get(user);
+//            for (Account found : accounts) {
+//                if (found.getRequisite().equals(requisite)) {
+//                    result = found;
+//                    break;
+//                }
+//            }
+//        }
+//        return result;
+//    }
+
     public Account findByRequisite(String passport, String requisite) {
         Account result = null;
         User user = findByPassport(passport);
         if (user != null) {
-            List<Account> accounts = users.get(user);
-            for (Account found : accounts) {
-                if (found.getRequisite().equals(requisite)) {
-                    result = found;
-                    break;
-                }
-            }
+            return users.get(user)
+                    .stream()
+                    .filter(s -> s.getRequisite().equals(requisite))
+                    .findFirst()
+                    .orElse(null);
         }
-        return result;
+        return null;
     }
 
     /**
