@@ -9,9 +9,8 @@ import java.util.stream.Stream;
 import static org.apache.commons.beanutils.ConvertUtils.convert;
 
 public class MatrixInteger {
-    public static void main(String[] args) {
-        Integer[][] matrix = {{1, 2, 3}, {4, 5, 6}};
-        List<Integer> list = Arrays.asList(matrix)
+    public List<Integer>  mina(Integer[][] matrix) {
+        return Arrays.asList(matrix)
                 .stream()
                 .flatMap(e -> Stream.of(e))
                 .collect(Collectors.toList());
