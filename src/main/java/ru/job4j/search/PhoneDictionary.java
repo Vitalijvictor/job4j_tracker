@@ -28,7 +28,7 @@ public class PhoneDictionary {
                 (combineName.or(combineSurname).or(combineGetPhone).or(combineGetAddress));
 
         ArrayList<Person> result = new ArrayList<>();
-        for (Person person : persons) {
+        for (var person : persons) {
             if (combine.test(person)) {
                 result.add(person);
             }
