@@ -9,7 +9,7 @@ import java.util.stream.Stream;
 import static org.apache.commons.beanutils.ConvertUtils.convert;
 
 public class MatrixInteger {
-    public List<Integer>  matrixToInt(Integer[][] matrix) {
+    public List<Integer>  matrixToList(Integer[][] matrix) {
         return Arrays.asList(matrix)
                 .stream()
                 .flatMap(e -> Stream.of(e))
