@@ -59,7 +59,7 @@ public class SchoolTest {
                 new Student(90, "Surname9")
         );
         School sc = new School();
-        Predicate<Student> pr = (student) -> student.getScore() >= 0
+        Predicate<Student> pr = (student) -> student.getScore() >= 1
                         && student.getScore() <= 49;
         List<Student> rsl = sc.collect(students, pr);
         List<Student> expected = new ArrayList<>();
