@@ -9,10 +9,9 @@ import java.util.stream.Stream;
 import static org.apache.commons.beanutils.ConvertUtils.convert;
 
 public class MatrixInteger {
-    public List<Integer>  matrixToList(Integer[][] matrix) {
-        return Arrays.asList(matrix)
-                .stream()
-                .flatMap(e -> Stream.of(e))
+    public static List<Integer>  matrixToList(Integer[][] matrix) {
+        return Stream.of(matrix)
+                .flatMap(Stream::of)
                 .collect(Collectors.toList());
     }
 }
