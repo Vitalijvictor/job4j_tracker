@@ -87,6 +87,7 @@ public class Jet {
                 .buildReadyToFly(true)
                 .buildCountOfFlights(1452)
                 .build();
+        System.out.println(jet);
     }
 }
 
