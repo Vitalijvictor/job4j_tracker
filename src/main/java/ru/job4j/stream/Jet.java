@@ -21,7 +21,7 @@ public class Jet {
         this.countOfFlights = numbersOfFlights;
     }
 
-    static Builder {
+    static class Builder {
         private String manufacturer;
         private String brand;
         private String model;
@@ -31,37 +31,37 @@ public class Jet {
         private int countOfFlights;
     }
 
-        Builder BuildManufacturer(String manufacturer) {
+        Builder buildManufacturer(String manufacturer) {
             this.manufacturer = manufacturer;
             return this;
         }
 
-        Builder BuildBrand(String brand) {
+        Builder buildBrand(String brand) {
             this.brand = brand;
             return this;
         }
 
-        Builder BuildModel(String model) {
+        Builder buildModel(String model) {
             this.model = model;
             return this;
         }
 
-        Builder BuildIdentificationNumber(int identificationNumber) {
+        Builder buildIdentificationNumber(int identificationNumber) {
             this.identificationNumber = identificationNumber;
             return this;
         }
 
-        Builder BuildWingspan(double wingspan) {
+        Builder buildWingspan(double wingspan) {
             this.wingspan = wingspan;
             return this;
         }
 
-        Builder BuildReadyToFly(boolean readyToFly) {
+        Builder buildReadyToFly(boolean readyToFly) {
             this.readyToFly = readyToFly;
             return this;
         }
 
-        Builder BuildCountOfFlights(int countOfFlights) {
+        Builder buildCountOfFlights(int countOfFlights) {
             this.countOfFlights = countOfFlights;
             return this;
         }
@@ -76,19 +76,18 @@ public class Jet {
             jet.readyToFly = readyToFly;
             jet.countOfFlights = countOfFlights;
             return jet;
-
-            public static void main(String[] args) {
-                Jet jet = new Builder().jetBuildManufacturer("The Boeing Company")
-                        .jetBuildBrand("Boeing")
-                        .jetBuildModel("B707")
-                        .jetBuildIdentificationNumber(5411155)
-                        .jetBuildWingspan(28.456)
-                        .jetBuildReadyToFly(true)
-                        .jetBuildCountOfFlights(1452)
-                        .jetBuild
-                        .build;
-            }
      }
+
+    public static void main(String[] args) {
+        Jet jet = new Builder().buildManufacturer("The Boeing Company")
+                .buildBrand("Boeing")
+                .buildModel("B707")
+                .buildIdentificationNumber(5411155)
+                .buildWingspan(28.456)
+                .buildReadyToFly(true)
+                .buildCountOfFlights(1452)
+                .build();
+    }
 }
 
 
