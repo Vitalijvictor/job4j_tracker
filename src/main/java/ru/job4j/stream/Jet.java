@@ -9,28 +9,6 @@ public class Jet {
     private boolean readyToFly;
     private int countOfFlights;
 
-    public Jet(String manufacturer, String brand, String model,
-               int identificationNumber, int wingspan,
-               boolean readyToFly, int numbersOfFlights) {
-        this.manufacturer = manufacturer;
-        this.brand = brand;
-        this.model = model;
-        this.identificationNumber = identificationNumber;
-        this.wingspan = wingspan;
-        this.readyToFly = readyToFly;
-        this.countOfFlights = numbersOfFlights;
-    }
-
-    @Override
-    public String toString() {
-        return "Jet{" + "manufacturer='" + manufacturer + '\'' + ", brand='"
-                + brand + '\'' + ", model='" + model + '\''
-                + ", identificationNumber="
-                + identificationNumber + ", wingspan=" + wingspan
-                + ", readyToFly="
-                + readyToFly + ", countOfFlights=" + countOfFlights + '}';
-    }
-
     static class Builder {
         private String manufacturer;
         private String brand;
@@ -39,7 +17,6 @@ public class Jet {
         private double wingspan;
         private boolean readyToFly;
         private int countOfFlights;
-    }
 
         Builder buildManufacturer(String manufacturer) {
             this.manufacturer = manufacturer;
@@ -86,7 +63,18 @@ public class Jet {
             jet.readyToFly = readyToFly;
             jet.countOfFlights = countOfFlights;
             return jet;
-     }
+        }
+
+        @Override
+        public String toString() {
+            return "Jet{" + "manufacturer='" + manufacturer + '\'' + ", brand='"
+                    + brand + '\'' + ", model='" + model + '\''
+                    + ", identificationNumber="
+                    + identificationNumber + ", wingspan=" + wingspan
+                    + ", readyToFly="
+                    + readyToFly + ", countOfFlights=" + countOfFlights + '}';
+        }
+    }
 
     public static void main(String[] args) {
         Jet jet = new Builder().buildManufacturer("The Boeing Company")
