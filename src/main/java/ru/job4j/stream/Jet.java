@@ -21,6 +21,16 @@ public class Jet {
         this.countOfFlights = numbersOfFlights;
     }
 
+    @Override
+    public String toString() {
+        return "Jet{" + "manufacturer='" + manufacturer + '\'' + ", brand='"
+                + brand + '\'' + ", model='" + model + '\''
+                + ", identificationNumber="
+                + identificationNumber + ", wingspan=" + wingspan
+                + ", readyToFly="
+                + readyToFly + ", countOfFlights=" + countOfFlights + '}';
+    }
+
     static class Builder {
         private String manufacturer;
         private String brand;
