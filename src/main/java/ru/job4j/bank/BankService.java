@@ -1,9 +1,7 @@
 package ru.job4j.bank;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
+import java.util.stream.Stream;
 
 /**
  * Класс работает с массивом данных от пользователей, а именно(requisite,
@@ -23,13 +21,13 @@ public class BankService {
      * @param account
      */
     public void addAccount(String passport, Account account) {
-        User userWithPassport = findByPassport(passport);
-        if (userWithPassport != null) {
-            List<Account> userAccounts = users.get(userWithPassport);
-            if (!userAccounts.contains(account)) {
-                userAccounts.add(account);
-            }
-        }
+//        User userWithPassport = findByPassport(passport);
+//        if (userWithPassport != null) {
+//            List<Account> userAccounts = users.get(userWithPassport);
+//            if (!userAccounts.contains(account)) {
+//                userAccounts.add(account);
+//            }
+//        }
     }
 
     /**
@@ -46,14 +44,12 @@ public class BankService {
 //        return null;
 //    }
 
-    public User findByPassport(String passport) {
+    public Optional<User> findByPassport(String passport) {
         return users.keySet()
                 .stream()
                 .filter(s -> s.getPassport().equals(passport))
-                .findFirst()
-                .orElse(null);
+                .findFirst();
     }
-
 
     /**
      * Данный метод ищет пользователя по реквизиту.
@@ -76,17 +72,14 @@ public class BankService {
 //        return result;
 //    }
 
-    public Account findByRequisite(String passport, String requisite) {
-        Account result = null;
-        User user = findByPassport(passport);
-        if (user != null) {
+    public Optional<Account> findByRequisite(String passport, String requisite) {
+        Optional<User> user = findByPassport(passport);
+        if (user.isPresent()) {
             return users.get(user)
                     .stream()
                     .filter(s -> s.getRequisite().equals(requisite))
-                    .findFirst()
-                    .orElse(null);
+                    .findFirst();
         }
-        return null;
     }
 
     /**
@@ -102,14 +95,25 @@ public class BankService {
     public boolean transferMoney(String srcPassport, String srcRequisite,
                                  String destPassport, String destRequisite, double amount) {
 
-        Account srcAccount = findByRequisite(srcPassport, srcRequisite);
-        Account destAccount = findByRequisite(destPassport, destRequisite);
+        Optional<Account> srcAccount = findByRequisite(srcPassport, srcRequisite);
+        Optional<Account> destAccount = findByRequisite(destPassport, destRequisite);
 
-        if (srcAccount != null && destAccount != null && amount <= srcAccount.getBalance()) {
-            srcAccount.setBalance(srcAccount.getBalance() - amount);
-            destAccount.setBalance(destAccount.getBalance() + amount);
+        if (srcAccount.isPresent() && destAccount.isPresent() && amount <= srcAccount.get()) {
+            srcAccount.get(srcAccount.get() - amount);
+            destAccount.get(destAccount.get() + amount);
             return true;
         }
             return false;
     }
+
+    public static void main(String[] args) {
+        Stream<Integer> stream = Stream.of(1, 2, 2);
+        Optional<Integer> rsl = stream.filter(e -> e == 2).findFirst();
+        if (rsl.isPresent()) {
+            System.out.println(rsl.get());
+        } else {
+            System.out.println("Element not found.");
+        }
+    }
+
 }
