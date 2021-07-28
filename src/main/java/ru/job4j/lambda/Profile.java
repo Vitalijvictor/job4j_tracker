@@ -4,6 +4,12 @@ public class Profile {
     private String name;
     private Address address;
 
+    public Profile(String name, String city, String street, int home,
+                   int apartment) {
+        this.name = name;
+        this.address = new Address(city, street, home, apartment);
+    }
+
     public String getName() {
         return name;
     }
@@ -18,11 +24,5 @@ public class Profile {
 
     public void setAddress(Address address) {
         this.address = address;
-    }
-
-    public Profile(String name, String city, String street, int home,
-                   int apartment) {
-        this.name = name;
-        this.address = new Address(city, street, home, apartment);
     }
 }
