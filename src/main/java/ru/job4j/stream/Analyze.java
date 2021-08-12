@@ -1,6 +1,7 @@
 package ru.job4j.stream;
 
 import java.util.Comparator;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -20,8 +21,6 @@ public class Analyze {
     }
 
     public static List<Tuple> averageScoreBySubject(Stream<Pupil> stream) {
-
-        //return null;
         return stream
                 .map(pupil ->
                         new Tuple(
@@ -35,34 +34,30 @@ public class Analyze {
                 .collect(Collectors.toList());
     }
 
-    public static List<Tuple> totalScoreBySubject(Stream<Pupil> stream) {
-        return stream
-                .map(pupil ->
-                    new Tuple(
-                            pupil.getName(),
-                            pupil.getSubjects().stream()
-                                    .mapToInt(s -> s.getScore())
-                                    .sum()
-                            )
-                )
-                .collect(Collectors.toList());
-    }
-
     public static void averageScoreByPupil(Stream<Pupil> stream) {
         Map<String, Double> map = stream
                 .flatMap(pupil -> pupil.getSubjects()
                                 .stream())
-                                .collect(Collectors.groupingBy(Subject :: getName),
-                                Collectors.averagingDouble(Subject :: getScore));
-                                return map.entrySet()
+                                .collect(Collectors
+                                        .groupingBy(Subject :: getName,
+                                                Collectors.averagingDouble(Subject :: getScore)));
+        LinkedHashMap<String, Double> linkedHashMap =  map
+                                .entrySet()
                                 .stream()
-                                .map(x -> new Tuple(x.getKey(), x.getValue())
+                                .map(x -> new Tuple(x.getKey(), x.getValue()))
                                 .collect(Collectors.toList());
     }
 
     public static Tuple bestStudent(Stream<Pupil> stream) {
-        return totalScoreBySubject(stream)
-                        .stream()
+        return stream
+                .map(pupil ->
+                        new Tuple(
+                                pupil.getName(),
+                                pupil.getSubjects().stream()
+                                        .mapToInt(s -> s.getScore())
+                                        .sum()
+                        )
+                )
                         .max(Comparator.comparing(tuple -> tuple.getScore()))
                         .get();
     }
