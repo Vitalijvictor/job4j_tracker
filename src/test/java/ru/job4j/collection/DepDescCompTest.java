@@ -5,6 +5,7 @@ import org.junit.Test;
 import static org.hamcrest.Matchers.lessThan;
 import static org.junit.Assert.*;
 import static org.hamcrest.Matchers.greaterThan;
+import static org.hamcrest.Matchers.is;
 
 public class DepDescCompTest {
 
@@ -15,6 +16,18 @@ public class DepDescCompTest {
                 "K2/SK1/SSK1"
         );
         assertThat(rsl, greaterThan(0));
+
+        rsl = new DepDescComp().compare(
+                "K2/SK1/SSK1",
+                "K2/SK1/SSK2"
+        );
+        assertThat(rsl, lessThan(0));
+
+        rsl = new DepDescComp().compare(
+                "K2/SK1/SSK2",
+                "K2/SK1/SSK2"
+        );
+        assertThat(rsl, is(0));
     }
 
     @Test
