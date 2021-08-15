@@ -7,8 +7,6 @@ import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-import static org.reflections.Reflections.collect;
-
 public class Analyze {
 
     public static double averageScore(Stream<Pupil> stream) {
