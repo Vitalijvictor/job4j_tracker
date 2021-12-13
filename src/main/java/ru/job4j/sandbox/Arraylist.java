@@ -20,14 +20,14 @@ import java.util.stream.Collectors;
 public class Arraylist {
     public static void main(String[] args) {
         ArrayList names = new ArrayList();
-        names.add(1); // можно добавлять элементы лююого типа
+        names.add(1);
         names.add("Michel");
         names.add("Ivan");
-        names.set(2, "Leny"); // замена Ивана на Leny
+        names.set(2, "Leny");
         names.add("Jojo");
         names.add("Adrian");
-        names.set(1, "Jack"); //замена Michel на Jack
-        names.remove(4);  // удаление Adrian
+        names.set(1, "Jack");
+        names.remove(4);
         System.out.println(names + " names");
 
         /**

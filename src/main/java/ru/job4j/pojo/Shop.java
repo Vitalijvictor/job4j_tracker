@@ -8,8 +8,6 @@ public class Shop {
                 return i;
             }
         }
-
-        //throw new RuntimeException("no empty elements");
         return -1;
     }
 }

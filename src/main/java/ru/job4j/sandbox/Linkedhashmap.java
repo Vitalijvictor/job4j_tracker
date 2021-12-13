@@ -11,9 +11,8 @@ public class Linkedhashmap {
         linkedHashMap.put("Rabbit", 3);
         linkedHashMap.put("Lion", 89);
         linkedHashMap.put("Fish", 41);
-        linkedHashMap.put("Fish", 41); //Дубликаты отсеиваются
-        linkedHashMap.put("Fish", 12); //Выводится последний элемент с
-        // одинаковым ключём
+        linkedHashMap.put("Fish", 41);
+        linkedHashMap.put("Fish", 12);
         System.out.println(linkedHashMap);
     }
 }

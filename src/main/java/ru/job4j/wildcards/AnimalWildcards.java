@@ -2,7 +2,6 @@ package ru.job4j.wildcards;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Iterator;
 import java.util.List;
 
 public class AnimalWildcards {
@@ -41,9 +40,7 @@ public class AnimalWildcards {
         iterateWildAnimals(list2);
         iterateWildAnimals(list3);
 
-        //iteratAnimals(list2); ошибка
-        //iteratAnimals(list3); ошибка
-        iterateWildAnimals(list2); //(Collection<? extends Animal>  не ошибка
+        iterateWildAnimals(list2);
         iterateWildAnimals(list3);
     }
 }

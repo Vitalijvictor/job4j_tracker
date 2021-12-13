@@ -22,12 +22,10 @@ public class Queuetest {
         System.out.println(queueA.size());
         System.out.println(queueA.hashCode());
 
-        //access via Iterator
         Iterator iterator = queueA.iterator();
         while (iterator.hasNext()) {
             String element = (String) iterator.next();
 
-        //access via new for-loop
             for (Object object : queueA) {
                 String elementA = (String) object;
                 System.out.println(element);

@@ -24,8 +24,7 @@ public class Hashset {
         names.add("Trump");
         names.add("Adrian");
         for (String name : names) {
-            System.out.println(name + name.length()); //
-            // отсеивает дубликаты
+            System.out.println(name + name.length());
         }
     }
 

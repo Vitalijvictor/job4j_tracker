@@ -13,7 +13,6 @@ import static org.junit.Assert.*;
 public class DiapasonTest {
     @Test
     public void whenLinearFunctionThenLinearResults() {
-        //Diapason function = new Diapason();
         List<Double> result = Diapason.diapason(5, 8, x -> 2 * x + 1);
         List<Double> expected = Arrays.asList(11D, 13D, 15D);
         assertThat(result, is(expected));
