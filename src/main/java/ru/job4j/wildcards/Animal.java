@@ -1,9 +1,14 @@
 package ru.job4j.wildcards;
 
 public class Animal {
-    public void run() {}
-    public void sleep() {}
-    public void makeNoise() {}
+    public void run() {
+    }
+
+    public void sleep() {
+    }
+
+    public void makeNoise() {
+    }
 
     @Override
     public String toString() {

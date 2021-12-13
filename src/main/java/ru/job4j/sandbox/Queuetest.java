@@ -25,13 +25,14 @@ public class Queuetest {
         //access via Iterator
         Iterator iterator = queueA.iterator();
         while (iterator.hasNext()) {
-            String element = (String) ((Iterator) iterator).next();
+            String element = (String) iterator.next();
 
         //access via new for-loop
             for (Object object : queueA) {
                 String elementA = (String) object;
+                System.out.println(element);
+                System.out.println(elementA);
             }
-            System.out.println(element);
         }
     }
 }

@@ -1,7 +1,8 @@
 package ru.job4j.wildcards;
 
 public class Tiger extends Animal {
-    public void roar() {}
+    public void roar() {
+    }
 
     @Override
     public void run() {

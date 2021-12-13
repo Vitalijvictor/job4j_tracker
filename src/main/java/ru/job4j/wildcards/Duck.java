@@ -1,7 +1,8 @@
 package ru.job4j.wildcards;
 
 public class Duck extends Animal {
-    public void fly() {}
+    public void fly() {
+    }
 
     @Override
     public void run() {
