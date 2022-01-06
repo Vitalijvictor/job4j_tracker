@@ -1,10 +1,11 @@
 package ru.job4j.tracker;
 
+import ru.job4j.tracker.model.Item;
+
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
-public class Tracker {
+public class MemTracker {
     private final List<Item> items = new ArrayList<Item>();
     private int ids = 1;
 
@@ -30,7 +31,6 @@ public class Tracker {
 
     public Item findById(int id) {
         int index = indexOf(id);
-        /* Если индекс найден возвращаем item, иначе null */
         return index != -1 ? items.get(index) : null;
     }
 
