@@ -5,7 +5,7 @@ import ru.job4j.tracker.model.Item;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MemTracker {
+public class MemTracker implements Store {
     private final List<Item> items = new ArrayList<Item>();
     private int ids = 1;
 

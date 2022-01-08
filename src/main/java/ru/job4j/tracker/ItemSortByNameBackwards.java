@@ -1,6 +1,7 @@
 package ru.job4j.tracker;
 
-import java.util.Collections;
+import ru.job4j.tracker.model.Item;
+
 import java.util.Comparator;
 
 public class ItemSortByNameBackwards implements Comparator<Item> {
