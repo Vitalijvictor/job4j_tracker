@@ -2,6 +2,7 @@ package ru.job4j.tracker.model;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
 import java.util.Objects;
 
 public class Item {
@@ -13,7 +14,8 @@ public class Item {
 
     private String name;
 
-    private LocalDateTime created = LocalDateTime.now();
+    private LocalDateTime created = LocalDateTime.now()
+            .truncatedTo(ChronoUnit.MICROS);
 
     public Item() {
     }
@@ -41,6 +43,9 @@ public class Item {
         this.id = id;
         this.name = name;
         this.created = created;
+    }
+
+    public Item(String name) {
     }
 
     public int getId() {

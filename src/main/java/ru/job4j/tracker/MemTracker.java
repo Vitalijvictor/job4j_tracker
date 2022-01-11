@@ -34,6 +34,16 @@ public class MemTracker implements Store {
         return index != -1 ? items.get(index) : null;
     }
 
+    @Override
+    public String name() {
+        return null;
+    }
+
+    @Override
+    public boolean execute(Input input, Store store) {
+        return false;
+    }
+
     private int indexOf(int id) {
         int rsl = -1;
         for (int index = 0; index < items.size(); index++) {

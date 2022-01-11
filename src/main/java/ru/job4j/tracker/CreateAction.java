@@ -2,7 +2,8 @@ package ru.job4j.tracker;
 
 import ru.job4j.tracker.model.Item;
 
-public class CreateAction implements UserAction {
+public class CreateAction implements Store{
+
     private final Output out;
 
     public CreateAction(Output out) {
@@ -15,11 +16,11 @@ public class CreateAction implements UserAction {
     }
 
     @Override
-    public boolean execute(Input input, MemTracker memTracker) {
+    public boolean execute(Input input, Store store) {
         out.println("=== Create a new Item ====");
         String name = input.askStr("Enter name: ");
-        Item item = new Item(1);
-        memTracker.add(item);
+        Item item = new Item(name);
+        store.add(item);
         return true;
     }
 }

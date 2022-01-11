@@ -1,6 +1,6 @@
 package ru.job4j.tracker;
 
-public class ExitAction implements UserAction {
+public class ExitAction implements Store {
     private final Output out;
 
     public ExitAction(Output out) {
@@ -13,7 +13,7 @@ public class ExitAction implements UserAction {
     }
 
     @Override
-    public boolean execute(Input input, MemTracker memTracker) {
+    public boolean execute(Input input, Store store) {
         return false;
     }
 }

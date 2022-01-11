@@ -16,4 +16,8 @@ public interface Store {
     List<Item> findByName(String key);
 
     Item findById(int id);
+
+    String name();
+
+    boolean execute(Input input, Store store);
 }

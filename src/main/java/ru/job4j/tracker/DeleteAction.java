@@ -1,6 +1,6 @@
 package ru.job4j.tracker;
 
-public class DeleteAction implements UserAction {
+public class DeleteAction implements Store {
     private final Output out;
 
     public DeleteAction(Output out) {
@@ -13,10 +13,10 @@ public class DeleteAction implements UserAction {
     }
 
     @Override
-    public boolean execute(Input input, MemTracker memTracker) {
+    public boolean execute(Input input, Store store) {
         this.out.println("=== Delete item ====");
         int id = input.askInt(" Enter id: ");
-        if (memTracker.delete(id)) {
+        if (store.delete(id)) {
             out.println("Заявка удалена успешно.");
         } else {
             out.println("Ошибка удаления заявки.");

@@ -141,4 +141,14 @@ public class SqlTracker implements Store, AutoCloseable {
         }
         return rsl;
     }
+
+    @Override
+    public String name() {
+        return null;
+    }
+
+    @Override
+    public boolean execute(Input input, Store store) {
+        return false;
+    }
 }
